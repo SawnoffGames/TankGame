@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Sawnoff Games. All rights reserved.
+// Copyright (c) Sawnoff Games. All rights reserved.
 
 
 #include "Input/CharacterPlayerController.h"
