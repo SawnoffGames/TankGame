@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "Components/TimelineComponent.h"
 #include "GameFramework/Character.h"
-#include "Shared/Vehicle.h"
 #include "MainCharacter.generated.h"
 
 class UCameraComponent;

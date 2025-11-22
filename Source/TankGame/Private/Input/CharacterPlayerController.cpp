@@ -8,6 +8,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Shared/Vehicle.h"
 
 void ACharacterPlayerController::BeginPlay()
 {

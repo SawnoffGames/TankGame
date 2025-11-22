@@ -40,8 +40,8 @@ AMainCharacter::AMainCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
-	EquippedWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RightHandWeaponHoldSocket"));
-	BackWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BackWeaponHoldSocket"));
+	EquippedWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("EquippedWeapon"));
+	BackWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BackWeapon"));
 
 	CameraZoomTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("CameraZoomTimeline"));
 }
