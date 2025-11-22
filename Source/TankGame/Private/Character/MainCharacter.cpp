@@ -10,6 +10,8 @@
 #include "Input/CharacterPlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Shared/Vehicle.h"
+#include "Tank/Tank.h"
+#include "Weapons/AK47/AK47.h"
 
 AMainCharacter::AMainCharacter()
 {
@@ -42,6 +44,8 @@ AMainCharacter::AMainCharacter()
 
 	EquippedWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("EquippedWeapon"));
 	BackWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BackWeapon"));
+	
+	EquippedWeaponNew = CreateDefaultSubobject<AAK47>(TEXT("EquippedWeaponNew"));
 
 	CameraZoomTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("CameraZoomTimeline"));
 }
@@ -73,7 +77,8 @@ void AMainCharacter::BeginPlay()
 
 void AMainCharacter::OnConstruction(const FTransform& Transform)
 {
-	EquippedWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("RightHandWeaponHoldSocket"));
+	// EquippedWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("RightHandWeaponHoldSocket"));
+	EquippedWeaponNew->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("RightHandWeaponHoldSocket"));
 	BackWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("BackWeaponHoldSocket"));
 }
 
@@ -84,19 +89,24 @@ void AMainCharacter::Tick(float DeltaTime)
 	float FOV = FMath::Lerp(FollowCamera->FieldOfView, DesiredFOV, DeltaTime * 10.0f);
 	FollowCamera->SetFieldOfView(FOV);
 }
-
 void AMainCharacter::Aim(bool aim)
 {
-	bIsAiming = aim;
-	bUseControllerRotationYaw = aim;
-	DesiredFOV = (aim ? AimFOV : StartFOV);
+	if (EquippedWeaponNew)
+	{
+		bIsAiming = aim;
+		bUseControllerRotationYaw = aim;
+		DesiredFOV = (aim ? AimFOV : StartFOV);	
+	}
 }
 
 void AMainCharacter::Attack()
 {
 	if (bIsAiming)
 	{
-		PerformLineTraceAndApplyDamage();
+		if (EquippedWeaponNew)
+		{
+			EquippedWeaponNew->Fire();			
+		}
 	}
 	else
 	{

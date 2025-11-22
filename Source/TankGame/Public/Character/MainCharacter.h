@@ -5,12 +5,14 @@
 #include "CoreMinimal.h"
 #include "Components/TimelineComponent.h"
 #include "GameFramework/Character.h"
+#include "Weapons/Weapon.h"
 #include "MainCharacter.generated.h"
 
 class UCameraComponent;
 class USpringArmComponent;
 class UBoxComponent;
 class UTimelineComponent;
+class UWeapon;
 
 UCLASS()
 class TANKGAME_API AMainCharacter : public ACharacter
@@ -26,6 +28,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UCameraComponent> FollowCamera;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Weapons, meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<AWeapon> EquippedWeaponNew;
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Combat, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UStaticMeshComponent> EquippedWeapon;
 
