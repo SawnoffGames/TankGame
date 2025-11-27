@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "Components/TimelineComponent.h"
 #include "GameFramework/Character.h"
-#include "Shared/Vehicle.h"
 #include "MainCharacter.generated.h"
 
 class UCameraComponent;
@@ -26,12 +25,6 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UCameraComponent> FollowCamera;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Combat, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<UStaticMeshComponent> EquippedWeapon;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Combat, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<UStaticMeshComponent> BackWeapon;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Animations, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UAnimMontage> AttackMontage;
@@ -61,8 +54,6 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
-	virtual void OnConstruction(const FTransform& Transform) override;
 	
 	virtual void Tick(float DeltaTime) override;
 

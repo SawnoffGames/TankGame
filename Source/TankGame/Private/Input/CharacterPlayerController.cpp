@@ -8,6 +8,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Shared/Vehicle.h"
 
 void ACharacterPlayerController::BeginPlay()
 {
@@ -37,8 +38,7 @@ void ACharacterPlayerController::SetupInputComponent()
 
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Triggered, this, &ACharacterPlayerController::StartSprint);
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &ACharacterPlayerController::StopSprint);
-
-		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Started, this, &ACharacterPlayerController::Attack);
+		
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Started, this, &ACharacterPlayerController::ToggleAim);
 
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Triggered, this, &ACharacterPlayerController::ToggleCrouch);
