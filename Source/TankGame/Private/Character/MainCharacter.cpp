@@ -40,9 +40,6 @@ AMainCharacter::AMainCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
-	EquippedWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RightHandWeaponHoldSocket"));
-	BackWeapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BackWeaponHoldSocket"));
-
 	CameraZoomTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("CameraZoomTimeline"));
 }
 
@@ -69,12 +66,6 @@ void AMainCharacter::BeginPlay()
 		CameraZoomTimeline->SetTimelineFinishedFunc(CameraZoomTimelineFinished);
 		CameraZoomTimeline->SetLooping(false);
 	}
-}
-
-void AMainCharacter::OnConstruction(const FTransform& Transform)
-{
-	EquippedWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("RightHandWeaponHoldSocket"));
-	BackWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("BackWeaponHoldSocket"));
 }
 
 void AMainCharacter::Tick(float DeltaTime)
