@@ -91,7 +91,7 @@ void AMainCharacter::Attack()
 	}
 	else
 	{
-		PlayMeleeAttackAnimation();
+		// PlayMeleeAttackAnimation();
 	}
 }
 
