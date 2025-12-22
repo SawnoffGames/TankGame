@@ -88,7 +88,6 @@ public:
 	void OnCameraZoomTimelineFinished();
 	
 private:
-	void PerformLineTraceAndApplyDamage();
 	void PlayMeleeAttackAnimation();
 
 	FOnTimelineFloat CameraZoomTimelineUpdate;
