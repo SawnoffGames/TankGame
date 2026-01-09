@@ -1,9 +1,9 @@
 // Copyright (c) Sawnoff Games. All rights reserved.
 
 
-#include "Animation/UDealDamageAnimNotifyState.h"
+#include "Core/Animation/UDealDamageAnimNotifyState.h"
 
-#include "Character/MainCharacter.h"
+#include "Characters/MainCharacter/MainCharacter.h"
 
 void UDealDamageAnimNotifyState::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation,
 	float TotalDuration, const FAnimNotifyEventReference& EventReference)

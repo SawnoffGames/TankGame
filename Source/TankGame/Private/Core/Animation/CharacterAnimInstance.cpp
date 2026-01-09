@@ -1,11 +1,11 @@
 // Copyright (c) Sawnoff Games. All rights reserved.
 
 
-#include "Animation/CharacterAnimInstance.h"
+#include "Core/Animation/CharacterAnimInstance.h"
 
 
 #include "KismetAnimationLibrary.h"
-#include "Character/MainCharacter.h"
+#include "Characters/MainCharacter/MainCharacter.h"
 #include "GameFramework/PawnMovementComponent.h"
 
 void UCharacterAnimInstance::NativeUpdateAnimation(float DeltaSeconds)

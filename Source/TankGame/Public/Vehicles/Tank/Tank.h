@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "WheeledVehiclePawn.h"
 #include "Components/TimelineComponent.h"
-#include "Shared/Vehicle.h"
+#include "Core/Vehicles/Vehicle.h"
 #include "Tank.generated.h"
 
 struct FInputActionValue;

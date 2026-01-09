@@ -1,14 +1,14 @@
 // Copyright (c) Sawnoff Games. All rights reserved.
 
 
-#include "Input/CharacterPlayerController.h"
+#include "Core/Input/CharacterPlayerController.h"
 
-#include "Character/MainCharacter.h"
+#include "Characters/MainCharacter/MainCharacter.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "Shared/Vehicle.h"
+#include "Core/Vehicles/Vehicle.h"
 
 void ACharacterPlayerController::BeginPlay()
 {

@@ -1,7 +1,7 @@
 // Copyright (c) Sawnoff Games. All rights reserved.
 
 
-#include "Tank/TankWheel.h"
+#include "Vehicles/Tank/TankWheel.h"
 
 UTankWheel::UTankWheel()
 {
