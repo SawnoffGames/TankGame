@@ -1,7 +1,7 @@
 // Copyright (c) 2025 Sawnoff Games. All rights reserved.
 
 
-#include "Tank/TankAmmo.h"
+#include "Vehicles/Tank/TankAmmo.h"
 
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"

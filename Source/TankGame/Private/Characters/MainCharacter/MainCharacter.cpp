@@ -1,15 +1,15 @@
 // Copyright (c) Sawnoff Games. All rights reserved.
 
 
-#include "Character/MainCharacter.h"
+#include "Characters/MainCharacter/MainCharacter.h"
 
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/CapsuleComponent.h"
-#include "Input/CharacterPlayerController.h"
+#include "Core/Input/CharacterPlayerController.h"
 #include "Kismet/GameplayStatics.h"
-#include "Shared/Vehicle.h"
+#include "Core/Vehicles/Vehicle.h"
 
 AMainCharacter::AMainCharacter()
 {

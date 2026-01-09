@@ -1,14 +1,14 @@
 // Copyright (c) Sawnoff Games. All rights reserved.
 
 
-#include "Tank/Tank.h"
+#include "Vehicles/Tank/Tank.h"
 
 #include "ChaosWheeledVehicleMovementComponent.h"
 #include "EnhancedInputComponent.h"
 #include "Blueprint/UserWidget.h"
 #include "Blueprint/WidgetLayoutLibrary.h"
 #include "Camera/CameraComponent.h"
-#include "Character/MainCharacter.h"
+#include "Characters/MainCharacter/MainCharacter.h"
 #include "Components/BoxComponent.h"
 #include "Components/SpotLightComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -16,8 +16,8 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Particles/ParticleSystemComponent.h"
-#include "Tank/TankAmmo.h"
-#include "Tank/TankWheel.h"
+#include "Vehicles/Tank/TankAmmo.h"
+#include "Vehicles/Tank/TankWheel.h"
 
 class UEnhancedInputLocalPlayerSubsystem;
 
