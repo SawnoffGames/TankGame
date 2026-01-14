@@ -81,7 +81,7 @@ void AMainCharacter::Aim(bool aim)
 	bIsAiming = aim;
 	bUseControllerRotationYaw = aim;
 	DesiredFOV = (aim ? AimFOV : StartFOV);
-	FollowCamera->bUsePawnControlRotation = aim;
+	FollowCamera->bUsePawnControlRotation = !aim;
 }
 
 void AMainCharacter::Attack()

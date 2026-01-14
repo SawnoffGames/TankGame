@@ -59,14 +59,25 @@ protected:
 
 public:
 	
+	UFUNCTION()
 	void Aim(bool aim);
+	
+	UFUNCTION()
 	void Attack();
+	
+	UFUNCTION()
 	void ActivateAttack(bool activate) const;
+	
+	UFUNCTION()
 	bool IsAttacking() const;
 
+	UFUNCTION()
 	void ZoomCamera(float ZoomValue);
 	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	bool bIsAiming = false;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	bool bIsZoomFinished = true;
 	
 	UFUNCTION()
