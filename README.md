@@ -1,4 +1,8 @@
-﻿# Tank Game
+<p align="center">
+  <img src="./TankGame.gif" alt="Tank Game">
+</p>
+
+# Tank Game
 
 Unreal Engine 5.6 project made during CG Spectrum [Game Programming Foundations](https://www.cgspectrum.com/courses/game-programming-foundations) course
 
