@@ -1,0 +1,46 @@
+Parameters:
+  AmiId:
+    Type: AWS::EC2::Image::Id
+    Description: ID of the AMI to use for the instance
+    ConstraintDescription: Must be a valid AMI ID in the selected region
+
+  InstanceType:
+    Type: String
+    Description: EC2 instance type
+
+  IamFleetRole:
+    Type: String
+    Description: IAM role for the EC2 spot fleet
+
+Resources:
+  EC2SpotFleet:
+    Type: AWS::EC2::SpotFleet
+    DeletionPolicy: Delete
+    Properties:
+      SpotFleetRequestConfigData:
+        TargetCapacity: 1
+        IamFleetRole: !Ref IamFleetRole
+        TerminateInstancesWithExpiration: true
+        LaunchTemplateConfigs:
+          - LaunchTemplateSpecification:
+              LaunchTemplateId: !Ref EC2LaunchTemplate
+              Version: !GetAtt EC2LaunchTemplate.DefaultVersionNumber
+
+  EC2LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    DeletionPolicy: Delete
+    Properties:
+      LaunchTemplateData:
+        ImageId: !Ref AmiId
+        InstanceType: !Ref InstanceType
+        InstanceMarketOptions:
+          MarketType: spot
+          SpotOptions:
+            SpotInstanceType: one-time
+            InstanceInterruptionBehavior: terminate
+        BlockDeviceMappings:
+          - DeviceName: /dev/sda1
+            Ebs:
+              VolumeSize: 250
+              VolumeType: gp3
+              DeleteOnTermination: true
